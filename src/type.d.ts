@@ -1,8 +1,10 @@
-export type Todo = {
+export interface Todo {
   id: number
   title: string
   completed: boolean
 }
+
+export type TodoID = Pick<Todo, 'id' | 'completed'>
 
 export type ListofTodos = Todo[]
 

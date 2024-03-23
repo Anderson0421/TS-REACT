@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { Todos } from "./components/Todos"
+import { Todo as TodoType, TodoID } from "./type"
 
 const ListTODOS = [
   {
@@ -22,9 +23,14 @@ const ListTODOS = [
 function App (): JSX.Element {
   const [todos, setTodos] = useState(ListTODOS)
 
-  const HandleRemove = (id: number): void => {
+  const HandleRemove = ({ id }: TodoID): void => {
     const NewTodos = todos.filter(todo => todo.id !== id)
     setTodos(NewTodos)
+  }
+
+  const HandleCompleted = ({id, completed}: Pick<TodoType, 'id' | 'completed'>
+  ): void => {
+
   }
 
   return (

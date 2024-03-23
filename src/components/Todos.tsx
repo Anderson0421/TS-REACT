@@ -1,11 +1,11 @@
 // Tipos de props en React con typescript
 // Para importar el tipo de dato que se va a utilizar en el componente se debe importar el tipo de dato que se va a utilizar
-import { type ListofTodos } from '../type'
+import { TodoID, type ListofTodos } from '../type'
 import { Todo } from '../components/Todo'
 
 interface Props {
   todos: ListofTodos
-  onRemoveTodo: (id: number) => void
+  onRemoveTodo: ({ id }: TodoID) => void
 }
 
 // Conel React.FC se define el tipo de componente que se va a crear
